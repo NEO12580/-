@@ -1,0 +1,13 @@
+#反UA反爬虫爬取百度页面程序
+import urllib.request
+url='https://www.baidu.com'
+headers={'User-Agent':'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)'}
+request=urllib.request.Request(url=url,headers= headers)
+response=urllib.request.urlopen(request)
+content=response.read().decode('utf8')
+print(content)
+#爬虫下载艾伦耶格尔的壁纸
+import urllib.request
+url_picture='https://tse3-mm.cn.bing.net/th/id/OIP-C.TfA6ektOdroqbPtvTJPoHgHaK_?pid=ImgDet&rs=1'
+urllib.request.urlretrieve(url_picture,'艾伦耶格尔.jpg')
+#
