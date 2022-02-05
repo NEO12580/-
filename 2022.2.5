@@ -1,0 +1,23 @@
+#类的getter、setter方法，及相关装饰器的使用
+class Student:
+    def __init__(self,name,age):
+        self.school='ahu'
+        self.__name=name
+        self.__age=age
+    @property
+    def age(self):
+        print('get方法已被等价调用')
+        return self.__age
+    @age.setter
+    def age(self,age):
+        self.__age=age
+        print('set方法已被等价调用')
+    def say_school(self):
+        print(self.school)
+    def hello(self):
+        print("你好！我叫{0},今年{1}岁了。".format(self.__name,self.__age ))
+s1=Student('dsq',20)
+s1.hello()
+s1.age=21
+print(s1.age)
+s1.hello()
